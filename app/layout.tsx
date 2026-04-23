@@ -28,16 +28,15 @@ export const metadata: Metadata = {
     ],
 
     icons: {
-        icon: "/logo.png",
-        shortcut: "/logo.png",
-        apple: "/logo.png",
+        icon: "/logo.png?v=4",
+        shortcut: "/logo.png?v=4",
+        apple: "/logo.png?v=4",
     },
 
     openGraph: {
         title: "Shreya Prajapati Portfolio",
-        description:
-            "Frontend Developer Portfolio built with Next.js and Tailwind CSS.",
-        url: "/logo.png",
+        description: "Frontend Developer Portfolio",
+        url: "https://shreyaprajapati-portfolio.vercel.app",
         siteName: "Portfolio",
         images: [
             {
