@@ -2,18 +2,11 @@ import { motion } from "framer-motion";
 
 const timeline = [
     {
-        year: "2026 — Present",
+        year: "2024 — Present",
         role: "Senior Frontend Developer",
         company: "Optimity Logics",
         desc: "Leading frontend architecture and delivering scalable features for SaaS clients. Building modern UI, seamless integrations, and high-performance user experiences.",
         tech: ["Next.js", "Node.js", "PostgreSQL", "AWS"],
-    },
-    {
-        year: "2024 — 2025",
-        role: "Junior Frontend Developer",
-        company: "Optimity Logics",
-        desc: "Built customer-facing dashboards, REST APIs, and internal tooling from scratch.",
-        tech: ["React", "Express", "MongoDB", "Docker"],
     },
     {
         year: "2022-2024",

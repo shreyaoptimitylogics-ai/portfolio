@@ -80,7 +80,7 @@ export default function Hero() {
                         <a
                             href="/resume.pdf"
                             download
-                            className="inline-flex items-center gap-2 rounded-full glass px-6 py-3 text-sm font-medium shadow-soft hover:-translate-y-0.5 transition-all"
+                            className="inline-flex items-center gap-2 rounded-full glass px-6 py-3 text-sm font-medium shadow-soft hover:-translate-y-0.5 transition-all duration-0"
                         >
                             <DownloadIcon className="h-4 w-4" />
                             Download Resume
@@ -88,7 +88,7 @@ export default function Hero() {
                     </div>
 
                     {/* SOCIAL ICONS */}
-                    <div className="mt-8 flex items-center gap-3">
+                    <div className="mt-8 flex items-center gap-3 duration-0">
                         {[
                             { Icon: GithubIcon, href: "https://github.com/shreyaoptimitylogics-ai", label: "GitHub" },
                             { Icon: LinkedinIcon, href: "https://linkedin.com/in/prajapati-shreya-183p", label: "LinkedIn" },

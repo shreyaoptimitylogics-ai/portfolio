@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Moon, Sun, Menu, X } from "lucide-react";
-import {useTheme} from "@/app/src/hooks/use-theme";
-import {cn} from "@/app/src/lib/utils";
-
+import { useTheme } from "@/app/src/hooks/use-theme";
+import { cn } from "@/app/src/lib/utils";
 
 const links = [
     { id: "home", label: "Home" },
@@ -18,6 +17,8 @@ export default function Navbar() {
     const { theme, toggle } = useTheme();
     const [scrolled, setScrolled] = useState(false);
     const [open, setOpen] = useState(false);
+    const [mounted, setMounted] = useState(false);
+    useEffect(() => setMounted(true), []);
 
     useEffect(() => {
         const onScroll = () => setScrolled(window.scrollY > 20);
@@ -33,11 +34,11 @@ export default function Navbar() {
 
     return (
         <motion.header
-            initial={{ y: -40, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            initial={{ opacity: 0, y: -16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration:0, ease: [0.25, 0.46, 0.45, 0.94] }}
             className={cn(
-                "fixed top-0 inset-x-0 z-50 transition-all duration-300",
+                "fixed top-0 inset-x-0 z-50 transition-all duration-600",
                 scrolled ? "py-3" : "py-5"
             )}
         >
@@ -48,6 +49,7 @@ export default function Navbar() {
                         scrolled ? "glass shadow-soft" : "bg-transparent"
                     )}
                 >
+                    {/* Logo — plain button, koi motion nahi */}
                     <button
                         onClick={() => go("home")}
                         className="flex items-center gap-2 font-display font-bold tracking-tight group"
@@ -60,11 +62,12 @@ export default function Navbar() {
                             height={36}
                             className="h-9 w-9 object-contain transition-transform group-hover:scale-105"
                         />
-                        <span className="hidden sm:inline text-base">
-              Shreya<span className="text-gradient"> Prajapati</span>
-            </span>
+                        <span className="hidden sm:inline text-base transition-colors duration-500">
+                            Shreya<span className="text-gradient"> Prajapati</span>
+                        </span>
                     </button>
 
+                    {/* Nav links — plain li, koi motion nahi */}
                     <ul className="hidden md:flex items-center gap-1">
                         {links.map((l) => (
                             <li key={l.id}>
@@ -79,21 +82,31 @@ export default function Navbar() {
                         ))}
                     </ul>
 
+                    {/* Right side — plain div, koi motion nahi */}
                     <div className="flex items-center gap-2">
                         <button
                             onClick={toggle}
                             aria-label="Toggle theme"
                             className="relative h-9 w-9 rounded-full glass shadow-soft flex items-center justify-center hover:scale-105 transition-transform"
                         >
-                            <motion.div
-                                key={theme}
-                                initial={{ rotate: -90, opacity: 0 }}
-                                animate={{ rotate: 0, opacity: 1 }}
-                                transition={{ duration: 0.35 }}
-                            >
-                                {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-                            </motion.div>
+                            {!mounted ? (
+                                <span className="h-4 w-4" />
+                            ) : (
+                                <motion.div
+                                    key={theme}
+                                    initial={{ rotate: -90, opacity: 0 }}
+                                    animate={{ rotate: 0, opacity: 1 }}
+                                    transition={{ duration: 0}}
+                                >
+                                    {theme === "dark" ? (
+                                        <Sun className="h-4 w-4" />
+                                    ) : (
+                                        <Moon className="h-4 w-4" />
+                                    )}
+                                </motion.div>
+                            )}
                         </button>
+
                         <button
                             className="md:hidden h-9 w-9 rounded-full glass flex items-center justify-center"
                             onClick={() => setOpen((v) => !v)}
@@ -106,8 +119,9 @@ export default function Navbar() {
 
                 {open && (
                     <motion.ul
-                        initial={{ opacity: 0, y: -10 }}
+                        initial={{ opacity: 0, y: -8 }}
                         animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.25, ease: "easeOut" }}
                         className="md:hidden mt-2 glass rounded-2xl p-3 shadow-soft flex flex-col"
                     >
                         {links.map((l) => (

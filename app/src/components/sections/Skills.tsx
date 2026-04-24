@@ -1,10 +1,73 @@
+"use client";
 import { motion } from "framer-motion";
+import {
+    SiReact,
+    SiNextdotjs,
+    SiTypescript,
+    SiJavascript,
+    SiHtml5,
+    SiCss,
+    SiFramer,
+    SiTailwindcss,
+    SiFigma,
+    SiRedux,
+    SiGit,
+    SiGithub,
+    SiVercel,
+    SiPostman,
+    SiWebstorm,
+} from "react-icons/si";
+import {
+    MdAnimation,
+    MdDevices,
+    MdCode,
+    MdStorage,
+    MdSyncAlt,
+    MdGridView,
+} from "react-icons/md";
 
 const groups = [
-    { title: "Frontend", items: ["React", "Next.js", "TypeScript", "JavaScript", "HTML5", "CSS3", "Framer Motion"] },
-    { title: "Styling & UI", items: ["CSS Animations", "Responsive Design", "Shadcn UI", "Figma","Tailwind CSS"] },
-    { title: "State & Data", items: ["Redux", "Zustand", "React Query"] },
-    { title: "Tools", items: ["Git", "GitHub", "Vercel", "Postman","VS Code","WebStorm"] },
+    {
+        title: "Frontend",
+        items: [
+            { name: "React",         Icon: SiReact,      color: "#61DAFB" },
+            { name: "Next.js",       Icon: SiNextdotjs,  color: "currentColor" },
+            { name: "TypeScript",    Icon: SiTypescript, color: "#3178C6" },
+            { name: "JavaScript",    Icon: SiJavascript, color: "#F7DF1E" },
+            { name: "HTML5",         Icon: SiHtml5,      color: "#E34F26" },
+            { name: "CSS3",          Icon: SiCss,        color: "#1572B6" },
+            { name: "Framer Motion", Icon: SiFramer,     color: "#0055FF" },
+        ],
+    },
+    {
+        title: "Styling & UI",
+        items: [
+            { name: "Tailwind CSS",      Icon: SiTailwindcss, color: "#06B6D4" },
+            { name: "CSS Animations",    Icon: MdAnimation,   color: "#A855F7" },
+            { name: "Responsive Design", Icon: MdDevices,     color: "#10B981" },
+            { name: "Shadcn UI",         Icon: MdGridView,    color: "currentColor" },
+            { name: "Figma",             Icon: SiFigma,       color: "#F24E1E" },
+        ],
+    },
+    {
+        title: "State & Data",
+        items: [
+            { name: "Redux",       Icon: SiRedux,   color: "#764ABC" },
+            { name: "Zustand",     Icon: MdStorage, color: "#EF6C00" },
+            { name: "React Query", Icon: MdSyncAlt, color: "#FF4154" },
+        ],
+    },
+    {
+        title: "Tools",
+        items: [
+            { name: "Git",      Icon: SiGit,     color: "#F05032" },
+            { name: "GitHub",   Icon: SiGithub,  color: "currentColor" },
+            { name: "Vercel",   Icon: SiVercel,  color: "currentColor" },
+            { name: "Postman",  Icon: SiPostman, color: "#FF6C37" },
+            { name: "VS Code",  Icon: MdCode,    color: "#007ACC" },
+            { name: "WebStorm", Icon: SiWebstorm,color: "#00CDD7" },
+        ],
+    },
 ];
 
 export default function Skills() {
@@ -33,13 +96,17 @@ export default function Skills() {
                         >
                             <h3 className="font-semibold text-lg">{g.title}</h3>
                             <div className="mt-4 flex flex-wrap gap-2">
-                                {g.items.map((s) => (
+                                {g.items.map(({ name, Icon, color }) => (
                                     <span
-                                        key={s}
-                                        className="text-xs font-medium px-3 py-1.5 rounded-full bg-card border border-border hover:border-emerald hover:text-emerald hover:-translate-y-0.5 transition-all cursor-default"
+                                        key={name}
+                                        className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full bg-card border border-border hover:border-emerald hover:-translate-y-0.5 transition-all duration-150 cursor-default group"
                                     >
-                    {s}
-                  </span>
+                                        <Icon
+                                            className="h-3.5 w-3.5 shrink-0 transition-colors duration-150"
+                                            style={{ color }}
+                                        />
+                                        {name}
+                                    </span>
                                 ))}
                             </div>
                         </motion.div>

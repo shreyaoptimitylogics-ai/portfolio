@@ -23,7 +23,7 @@ const projects = [
         desc: "Eyevestor needed a modern scalable platform. I built a Craft CMS website with modular blocks, flexible templates, and easy content management.",
         tech: ["Next.js", "React JS", "Craft CMS", "Javascript"],
         image: "/Eyevestor.png",
-        github: "https://github.com/shreyaoptimitylogics-ai/eyevestor-website",
+
         demo: "https://eyevestor-website.vercel.app/",
     },
     {
@@ -31,8 +31,8 @@ const projects = [
         desc: "Hotels struggled with outdated systems, so I built a modern responsive frontend for HTS using React.js, Next.js, JavaScript, and Tailwind CSS. I created clean UI screens for bookings, check-in/out, housekeeping, and guest management with a smooth user experience.",
         tech: ["React", "Next JS", "Javascript", "Tailwind CSS"],
         image: "/HTS.svg",
-        github: "https://github.com",
-        demo: "https://example.com",
+        video: "/HTS.mp4",
+        demo: "https://hts.hopper.com/",
     },
     // {
     //     title: "E-commerce Platform",
@@ -71,22 +71,39 @@ export default function Projects() {
                     {projects.map((p, i) => (
                         <motion.article
                             key={p.title}
-                            initial={{ opacity: 0, y: 30 }}
+                            initial={{ opacity: 0, y: 60 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: i * 0.1 }}
-                            whileHover={{ y: -8 }}
-                            className="glass rounded-2xl overflow-hidden shadow-soft hover:shadow-elegant transition-all group"
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={{
+                                duration: 0.9,
+                                ease: [0.22, 1, 0.36, 1]
+                            }}
+                            whileHover={{
+                                y: -8,
+                                transition: { duration: 0.9 }
+                            }}
+                            className="glass rounded-2xl overflow-hidden shadow-soft hover:shadow-elegant group"
                         >
-                            <div className="aspect-video overflow-hidden bg-muted">
+                            <div className="relative aspect-video overflow-hidden bg-muted">
+
+                                {/* Default Image */}
                                 <img
                                     src={p.image}
                                     alt={p.title}
                                     loading="lazy"
-                                    width={1024}
-                                    height={640}
-                                    className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    className="absolute inset-0 h-full w-full object-cover transition-opacity duration-500 group-hover:opacity-0"
                                 />
+
+                                {/* Hover Video */}
+                                <video
+                                    src={p.video}
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                    className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                                />
+
                             </div>
 
                             <div className="p-6">
@@ -102,9 +119,9 @@ export default function Projects() {
                                 </div>
 
                                 <div className="mt-5 flex items-center gap-4">
-                                    <a href={p.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-sm font-medium hover:text-emerald transition-colors">
-                                        <GithubIcon className="h-4 w-4" /> Code
-                                    </a>
+                                    {/*<a href={p.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-sm font-medium hover:text-emerald transition-colors">*/}
+                                    {/*    <GithubIcon className="h-4 w-4" /> Code*/}
+                                    {/*</a>*/}
                                     <a href={p.demo} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-sm font-medium hover:text-emerald transition-colors">
                                         <ExternalLinkIcon className="h-4 w-4" /> Live Demo
                                     </a>
