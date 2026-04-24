@@ -116,14 +116,14 @@ export default function Hero() {
                     className="relative justify-self-center"
                 >
                     <div className="absolute inset-0 -z-10 blur-3xl opacity-60 bg-gradient-accent rounded-full" />
-                    <div className="relative h-64 w-64 md:h-80 md:w-80 rounded-full p-1 bg-gradient-accent shadow-elegant">
+                    <div className="relative h-64 w-64 md:h-100 md:w-100 rounded-full p-1 bg-gradient-accent shadow-elegant">
                         <div className="h-full w-full rounded-full overflow-hidden bg-card">
                             <img
-                                src="/shreya.png"
+                                src="/shreyaa.jpg"
                                 alt="Shreya Prajapati"
-                                width={768}
-                                height={768}
-                                className="h-full w-full object-cover"
+                                width={700}
+                                height={700}
+                                className="h-100vh w-full object-cover"
                             />
                         </div>
                         <motion.div
