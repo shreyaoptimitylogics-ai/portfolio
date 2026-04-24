@@ -119,7 +119,7 @@ export default function Hero() {
                     <div className="relative h-64 w-64 md:h-100 md:w-100 rounded-full p-1 bg-gradient-accent shadow-elegant">
                         <div className="h-full w-full rounded-full overflow-hidden bg-card">
                             <img
-                                src="/shreyaa.jpg"
+                                src="/shreya.jpg"
                                 alt="Shreya Prajapati"
                                 width={700}
                                 height={700}
