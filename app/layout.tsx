@@ -48,11 +48,9 @@ export default function RootLayout({
 
         <body className="min-h-full flex flex-col">
         <ThemeProvider>
-
-            <SmoothScroll />
-
-            {children}
-
+            <SmoothScroll>
+                {children}
+            </SmoothScroll>
         </ThemeProvider>
         </body>
         </html>
