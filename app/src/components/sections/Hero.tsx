@@ -77,14 +77,14 @@ export default function Hero() {
                             <ArrowRightIcon className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                         </button>
 
-                        <a
-                            href="/resume.pdf"
-                            download
-                            className="inline-flex items-center gap-2 rounded-full glass px-6 py-3 text-sm font-medium shadow-soft hover:-translate-y-0.5 transition-all duration-0"
-                        >
-                            <DownloadIcon className="h-4 w-4" />
-                            Download Resume
-                        </a>
+                        {/*<a*/}
+                        {/*    href="/resume.pdf"*/}
+                        {/*    download*/}
+                        {/*    className="inline-flex items-center gap-2 rounded-full glass px-6 py-3 text-sm font-medium shadow-soft hover:-translate-y-0.5 transition-all duration-0"*/}
+                        {/*>*/}
+                        {/*    <DownloadIcon className="h-4 w-4" />*/}
+                        {/*    Download Resume*/}
+                        {/*</a>*/}
                     </div>
 
                     {/* SOCIAL ICONS */}

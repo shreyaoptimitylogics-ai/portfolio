@@ -8,8 +8,7 @@ import About from "@/app/src/components/sections/About";
 import Skills from "@/app/src/components/sections/Skills";
 import Projects from "@/app/src/components/sections/Projects";
 import Experience from "@/app/src/components/sections/Experience";
-import Contact from "@/app/src/components/sections/Contact";
-
+import {Contact} from "@/app/src/components/sections/Contact";
 export default function Page() {
     return (
         <ThemeProvider>
