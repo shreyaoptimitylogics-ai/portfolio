@@ -17,7 +17,7 @@ export async function POST(req: Request) {
            1. MAIL TO YOU (ADMIN MAIL)
         =============================== */
         await transporter.sendMail({
-            from: `"Portfolio Contact" <${process.env.GMAIL_USER}>`,
+            from: email,
             to: process.env.GMAIL_USER,
             replyTo: email,
             subject: `📩 New Inquiry: ${subject || "Portfolio Contact"}`,
