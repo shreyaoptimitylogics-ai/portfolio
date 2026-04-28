@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Code2, Server, Layout, Plug } from "lucide-react";
 
@@ -10,8 +12,8 @@ const cards = [
 
 export default function About() {
     return (
-        <section id="about" className="py-28 px-6">
-            <div className="mx-auto max-w-6xl">
+        <section id="about" className="py-28">
+            <div className="mx-auto max-w-6xl px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}

@@ -56,7 +56,7 @@ const schema = z.object({
     message: z.string().trim().min(1, "Message is required").max(1000),
 });
 
-const EMAIL = "mailto:shreya.optimitylogics@gmail.com";
+const EMAIL   = "mailto:shreya.optimitylogics@gmail.com";
 const GITHUB  = "https://github.com/shreyaoptimitylogics-ai";
 const LINKEDIN = "https://linkedin.com/in/prajapati-shreya-183p";
 
@@ -196,21 +196,22 @@ export const Contact = () => {
     return (
         <section
             id="contact"
-            className="section-padding pt-32 md:pt-40 relative overflow-hidden"
+            className="py-28 relative overflow-hidden bg-muted/40"
         >
             {/* Background blobs */}
             <div className="absolute inset-0 bg-dotted opacity-25 pointer-events-none" />
             <div className="absolute -bottom-24 left-1/2 -translate-x-1/2 h-72 w-[600px] rounded-full bg-[color:var(--emerald)]/10 dark:bg-[color:var(--emerald)]/5 blur-3xl -z-10 animate-blob" />
 
-            <div className="container mx-auto max-w-5xl px-6 relative">
+            <div className="mx-auto max-w-6xl px-6 relative">
 
+                {/* ── Heading ── */}
                 {/* ── Heading ── */}
                 <motion.div
                     initial={{ opacity: 0, y: 24 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-80px" }}
                     transition={{ duration: 0.6 }}
-                    className="text-center max-w-2xl mx-auto"
+                    className="max-w-2xl"
                 >
                     <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[color:var(--emerald)] mb-3">
                         Contact
@@ -222,7 +223,6 @@ export const Contact = () => {
                         Have a project in mind, a role to fill, or just want to say hi? My inbox is open.
                     </p>
                 </motion.div>
-
                 {/* ── Contact method cards ── */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -252,7 +252,6 @@ export const Contact = () => {
                                 shadow-soft hover:shadow-glow
                             "
                         >
-                            {/* Icon */}
                             <span
                                 className="
                                     h-10 w-10 grid place-items-center rounded-xl
@@ -265,12 +264,10 @@ export const Contact = () => {
                             >
                                 <Icon className="h-4 w-4" />
                             </span>
-
-                            {/* Text */}
                             <div className="min-w-0">
                                 <p className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground mb-0.5">
-                                {label}
-                            </p>
+                                    {label}
+                                </p>
                                 <p className="text-sm font-medium text-foreground truncate">{value}</p>
                                 <p className="text-xs text-muted-foreground/70 mt-0.5">{hint}</p>
                             </div>
@@ -286,17 +283,10 @@ export const Contact = () => {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     className="mt-4 relative"
                 >
-                    {/* Subtle glow behind card */}
                     <div className="absolute -inset-1 rounded-3xl bg-[color:var(--emerald)]/8 dark:bg-[color:var(--emerald)]/5 blur-2xl -z-10" />
 
-                    <div
-                        className="
-                            rounded-2xl p-6 md:p-8
-                            bg-card dark:bg-card
-                            border border-border
-                            shadow-elegant
-                        "
-                    >
+                    <div className="rounded-2xl p-6 md:p-8 bg-card dark:bg-card border border-border shadow-elegant">
+
                         {/* Form header */}
                         <div className="flex items-center justify-between mb-6 pb-5 border-b border-border">
                             <div className="flex items-center gap-3">
@@ -320,7 +310,7 @@ export const Contact = () => {
                             </div>
 
                             {/* Availability badge */}
-                            <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-[color:var(--emerald)]/10 dark:bg-[color:var(--emerald)]/10 border border-[color:var(--emerald)]/20">
+                            <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-[color:var(--emerald)]/10 border border-[color:var(--emerald)]/20">
                                 <span className="relative flex h-2 w-2">
                                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[color:var(--emerald)] opacity-60" />
                                     <span className="relative inline-flex rounded-full h-2 w-2 bg-[color:var(--emerald)]" />
@@ -401,7 +391,6 @@ export const Contact = () => {
 
                             {/* Submit button */}
                             <div className="flex items-center justify-between pt-1">
-                                {/* Mobile availability */}
                                 <div className="sm:hidden flex items-center gap-2">
                                     <span className="relative flex h-2 w-2">
                                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[color:var(--emerald)] opacity-60" />

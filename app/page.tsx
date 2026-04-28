@@ -9,6 +9,7 @@ import Skills from "@/app/src/components/sections/Skills";
 import Projects from "@/app/src/components/sections/Projects";
 import Experience from "@/app/src/components/sections/Experience";
 import {Contact} from "@/app/src/components/sections/Contact";
+import {IntroVideo} from "@/app/src/components/sections/intro";
 export default function Page() {
     return (
         <ThemeProvider>
@@ -17,6 +18,7 @@ export default function Page() {
                 <Hero />
                 <About />
                 <Skills />
+                <IntroVideo/>
                 <Projects />
                 <Experience />
                 <Contact />

@@ -60,20 +60,20 @@ const groups = [
     {
         title: "Tools",
         items: [
-            { name: "Git",      Icon: SiGit,     color: "#F05032" },
-            { name: "GitHub",   Icon: SiGithub,  color: "currentColor" },
-            { name: "Vercel",   Icon: SiVercel,  color: "currentColor" },
-            { name: "Postman",  Icon: SiPostman, color: "#FF6C37" },
-            { name: "VS Code",  Icon: MdCode,    color: "#007ACC" },
-            { name: "WebStorm", Icon: SiWebstorm,color: "#00CDD7" },
+            { name: "Git",      Icon: SiGit,      color: "#F05032" },
+            { name: "GitHub",   Icon: SiGithub,   color: "currentColor" },
+            { name: "Vercel",   Icon: SiVercel,   color: "currentColor" },
+            { name: "Postman",  Icon: SiPostman,  color: "#FF6C37" },
+            { name: "VS Code",  Icon: MdCode,     color: "#007ACC" },
+            { name: "WebStorm", Icon: SiWebstorm, color: "#00CDD7" },
         ],
     },
 ];
 
 export default function Skills() {
     return (
-        <section id="skills" className="py-28 px-6 bg-muted/40">
-            <div className="mx-auto max-w-6xl">
+        <section id="skills" className="py-28 bg-muted/40">
+            <div className="mx-auto max-w-6xl px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}

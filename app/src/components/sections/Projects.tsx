@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 
-// SVG ICONS (no lucide-react)
 const GithubIcon = (props: any) => (
     <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
         <path d="M12 .5C5.7.5.7 5.7.7 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.6-1.3-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 .1.2 2.1 2.7 2.1.6 0 1.2-.1 1.7-.3.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-6a4.7 4.7 0 011.2-3.2 4.3 4.3 0 01.1-3.2s1-.3 3.3 1.2a11.2 11.2 0 016 0c2.3-1.5 3.3-1.2 3.3-1.2.4 1.2.2 2.2.1 3.2a4.7 4.7 0 011.2 3.2c0 4.7-2.7 5.7-5.3 6 .4.4.8 1.1.8 2.3v3.4c0 .3.2.7.8.6A11.3 11.3 0 0023.3 12C23.3 5.7 18.3.5 12 .5z"/>
@@ -22,7 +21,7 @@ const projects = [
         title: "Eyevestor — Investment Platform Website",
         desc: "Eyevestor needed a modern scalable platform. I built a Craft CMS website with modular blocks, flexible templates, and easy content management.",
         tech: ["Next.js", "React JS", "Craft CMS", "Javascript"],
-        image: "/Eyevestor.png",
+        image: "/eye.png",
         video: "/eyevestor.mp4",
         demo: "https://eyevestor-website.vercel.app/",
     },
@@ -30,7 +29,7 @@ const projects = [
         title: "HTS – Digital Hospitality Platform | Booking & Guest Management",
         desc: "Hotels struggled with outdated systems, so I built a modern responsive frontend for HTS using React.js, Next.js, JavaScript, and Tailwind CSS. I created clean UI screens for bookings, check-in/out, housekeeping, and guest management with a smooth user experience.",
         tech: ["React", "Next JS", "Javascript", "Tailwind CSS"],
-        image: "/HTS.svg",
+        image: "/handwriting.webp",
         video: "/HTS.mp4",
         demo: "https://hts.hopper.com/",
     },
@@ -38,7 +37,7 @@ const projects = [
         title: "KetoCycle – AI-Powered Ketogenic Diet & Nutrition Tracker",
         desc: "Built a comprehensive mobile-first frontend for KetoCycle using React.js, Next.js, and Tailwind CSS. Designed intuitive UI screens for personalized meal planning, macro tracking, recipe recommendations, and progress analytics — delivering a clean, health-focused user experience.",
         tech: ["React", "Next JS", "Javascript", "Tailwind CSS"],
-        image: "/keto-cycle.png",
+        image: "/ketoo.jpg",
         video: "/keto-cycle.mp4",
         demo: "https://gl.ketocycle.diet/",
     },
@@ -46,7 +45,7 @@ const projects = [
         title: "TICE Group – Reverse Logistics & Product Recovery Platform",
         desc: "Built a scalable responsive frontend for TICE Group using React.js, Next.js, and Tailwind CSS. Designed clean UI screens for returns orchestration, trade-in processing, real-time tracking dashboards, and recovery workflows — delivering a professional enterprise-grade user experience.",
         tech: ["React", "Next JS", "Javascript", "Tailwind CSS"],
-        image: "/tice-group.png",
+        image: "/tice-group.jpeg",
         video: "/tice-group.mp4",
         demo: "https://tice-group.com/",
     },
@@ -54,8 +53,8 @@ const projects = [
 
 export default function Projects() {
     return (
-        <section id="projects" className="py-28 px-6">
-            <div className="mx-auto max-w-6xl">
+        <section id="projects" className="py-28 bg-muted/40">
+            <div className="mx-auto max-w-6xl px-6">
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -119,9 +118,6 @@ export default function Projects() {
                                 </div>
 
                                 <div className="mt-5 flex items-center gap-4">
-                                    {/*<a href={p.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-sm font-medium hover:text-emerald transition-colors">*/}
-                                    {/*    <GithubIcon className="h-4 w-4" /> Code*/}
-                                    {/*</a>*/}
                                     <a href={p.demo} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-sm font-medium hover:text-emerald transition-colors">
                                         <ExternalLinkIcon className="h-4 w-4" /> Live Demo
                                     </a>
