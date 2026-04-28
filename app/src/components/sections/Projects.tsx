@@ -23,7 +23,7 @@ const projects = [
         desc: "Eyevestor needed a modern scalable platform. I built a Craft CMS website with modular blocks, flexible templates, and easy content management.",
         tech: ["Next.js", "React JS", "Craft CMS", "Javascript"],
         image: "/Eyevestor.png",
-
+        video: "/eyevestor.mp4",
         demo: "https://eyevestor-website.vercel.app/",
     },
     {
@@ -34,22 +34,22 @@ const projects = [
         video: "/HTS.mp4",
         demo: "https://hts.hopper.com/",
     },
-    // {
-    //     title: "E-commerce Platform",
-    //     desc: "Headless storefront with cart, Stripe checkout, and admin dashboard.",
-    //     tech: ["Next.js", "Stripe", "Tailwind", "Prisma"],
-    //     image: "/projects/ecom.jpg",
-    //     github: "https://github.com",
-    //     demo: "https://example.com",
-    // },
-    // {
-    //     title: "Developer Portfolio Platform",
-    //     desc: "Multi-tenant portfolio builder for developers with custom themes and analytics.",
-    //     tech: ["React", "Node.js", "MongoDB", "Vercel"],
-    //     image: "/projects/portfolio.jpg",
-    //     github: "https://github.com",
-    //     demo: "https://example.com",
-    // },
+    {
+        title: "KetoCycle – AI-Powered Ketogenic Diet & Nutrition Tracker",
+        desc: "Built a comprehensive mobile-first frontend for KetoCycle using React.js, Next.js, and Tailwind CSS. Designed intuitive UI screens for personalized meal planning, macro tracking, recipe recommendations, and progress analytics — delivering a clean, health-focused user experience.",
+        tech: ["React", "Next JS", "Javascript", "Tailwind CSS"],
+        image: "/keto-cycle.png",
+        video: "/keto-cycle.mp4",
+        demo: "https://gl.ketocycle.diet/",
+    },
+    {
+        title: "TICE Group – Reverse Logistics & Product Recovery Platform",
+        desc: "Built a scalable responsive frontend for TICE Group using React.js, Next.js, and Tailwind CSS. Designed clean UI screens for returns orchestration, trade-in processing, real-time tracking dashboards, and recovery workflows — delivering a professional enterprise-grade user experience.",
+        tech: ["React", "Next JS", "Javascript", "Tailwind CSS"],
+        image: "/tice-group.png",
+        video: "/tice-group.mp4",
+        demo: "https://tice-group.com/",
+    },
 ];
 
 export default function Projects() {
