@@ -8,7 +8,7 @@ const timeline = [
         role: "Senior Frontend Developer",
         company: "Optimity Logics",
         desc: "Leading frontend architecture and delivering scalable features for SaaS clients. Building modern UI, seamless integrations, and high-performance user experiences.",
-        tech: ["Next.js", "Node.js", "PostgreSQL", "AWS"],
+        // tech: ["Next.js", "Node.js", "PostgreSQL", "AWS"],
         current: true,
     },
     {
@@ -16,7 +16,7 @@ const timeline = [
         role: "Frontend Developer",
         company: "ThinkNovus",
         desc: "Delivered responsive marketing sites and web apps for global brands.",
-        tech: ["React", "TypeScript", "Tailwind"],
+        // tech: ["React", "TypeScript", "Tailwind"],
         current: false,
     },
 ];
@@ -102,16 +102,16 @@ export default function Experience() {
                                     </div>
 
                                     {/* Tech badges */}
-                                    <div className="mt-4 flex flex-wrap gap-2">
-                                        {t.tech.map((x) => (
-                                            <span
-                                                key={x}
-                                                className="text-xs px-2.5 py-1 rounded-full bg-card border border-border hover:border-[color:var(--emerald)] transition-colors duration-150"
-                                            >
-                                                {x}
-                                            </span>
-                                        ))}
-                                    </div>
+                                    {/*<div className="mt-4 flex flex-wrap gap-2">*/}
+                                    {/*    {t.tech.map((x) => (*/}
+                                    {/*        <span*/}
+                                    {/*            key={x}*/}
+                                    {/*            className="text-xs px-2.5 py-1 rounded-full bg-card border border-border hover:border-[color:var(--emerald)] transition-colors duration-150"*/}
+                                    {/*        >*/}
+                                    {/*            {x}*/}
+                                    {/*        </span>*/}
+                                    {/*    ))}*/}
+                                    {/*</div>*/}
                                 </motion.div>
 
                             </motion.div>
