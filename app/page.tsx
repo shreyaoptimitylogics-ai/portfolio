@@ -6,7 +6,7 @@ import Navbar from "@/app/src/components/Navbar";
 import Hero from "@/app/src/components/sections/Hero";
 import About from "@/app/src/components/sections/About";
 import Skills from "@/app/src/components/sections/Skills";
-import Projects from "@/app/src/components/sections/Projects";
+import Project from "@/app/src/components/sections/Projects";
 import Experience from "@/app/src/components/sections/Experience";
 import {Contact} from "@/app/src/components/sections/Contact";
 import {IntroVideo} from "@/app/src/components/sections/intro";
@@ -19,7 +19,7 @@ export default function Page() {
                 <About />
                 <Skills />
                 <IntroVideo/>
-                <Projects />
+                <Project />
                 <Experience />
                 <Contact />
                 <Toaster />

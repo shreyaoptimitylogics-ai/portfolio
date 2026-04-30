@@ -8,7 +8,6 @@ const timeline = [
         role: "Senior Frontend Developer",
         company: "Optimity Logics",
         desc: "Leading frontend architecture and delivering scalable features for SaaS clients. Building modern UI, seamless integrations, and high-performance user experiences.",
-        // tech: ["Next.js", "Node.js", "PostgreSQL", "AWS"],
         current: true,
     },
     {
@@ -16,107 +15,87 @@ const timeline = [
         role: "Frontend Developer",
         company: "ThinkNovus",
         desc: "Delivered responsive marketing sites and web apps for global brands.",
-        // tech: ["React", "TypeScript", "Tailwind"],
         current: false,
     },
 ];
 
 export default function Experience() {
     return (
-        <section id="experience" className="py-28">
-            <div className="mx-auto max-w-6xl px-6">
+        <section id="experience" className="py-14 sm:py-20 md:py-24 lg:py-28">
+            <div className="mx-auto max-w-6xl px-4 sm:px-6">
 
+                {/* ── HEADER ─────────────────────────────────────── */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                 >
-                    <p className="text-sm font-medium text-emerald uppercase tracking-widest">Experience</p>
-                    <h2 className="mt-3 text-4xl md:text-5xl font-bold">4+ years building products.</h2>
+                    <p className="text-xs sm:text-sm font-medium text-emerald uppercase tracking-widest">
+                        Experience
+                    </p>
+                    <h2 className="mt-3 font-bold leading-tight text-3xl sm:text-4xl md:text-5xl">
+                        4+ years building products.
+                    </h2>
                 </motion.div>
 
-                <div className="mt-12 relative">
-
-                    {/* ── Center vertical line ── */}
-                    <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-border" />
-
-                    <div className="flex flex-col gap-5">
-                        {timeline.map((t, i) => (
+                {/* ── CARDS — simple stacked, no line/dot on any size ── */}
+                <div className="mt-8 sm:mt-10 lg:mt-12 flex flex-col gap-4 sm:gap-5">
+                    {timeline.map((t, i) => (
+                        <motion.div
+                            key={t.role}
+                            initial={{ opacity: 0, y: 24 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: i * 0.1 }}
+                        >
                             <motion.div
-                                key={t.role}
-                                initial={{ opacity: 0, y: 24 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: i * 0.1 }}
-                                className="relative md:grid md:grid-cols-2 md:gap-10"
+                                whileHover={{ y: -4 }}
+                                className="glass rounded-xl sm:rounded-2xl shadow-soft hover:shadow-elegant transition-all duration-300 p-4 sm:p-6 md:p-8"
                             >
-                                {/* ── Center dot on the line ── */}
-                                <span className="hidden md:block absolute left-1/2 top-8 -translate-x-1/2 h-3 w-3 rounded-full bg-gradient-accent ring-4 ring-background z-10" />
+                                <div className="flex items-start gap-3 sm:gap-4">
 
-                                {/* ── Card — alternates left/right ── */}
-                                <motion.div
-                                    whileHover={{ y: -4 }}
-                                    className={`glass rounded-2xl p-6 md:p-8 shadow-soft hover:shadow-elegant transition-all duration-300 group
-                                        ${i % 2 === 0 ? "md:col-start-1 md:mr-6" : "md:col-start-2 md:ml-6"}
-                                    `}
-                                >
-                                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-
-                                        {/* Left — role info */}
-                                        <div className="flex items-start gap-4">
-
-                                            {/* Icon box */}
-                                            <div className="mt-1 shrink-0 h-10 w-10 rounded-xl bg-gradient-accent flex items-center justify-center shadow-glow">
-                                                <span className="h-2.5 w-2.5 rounded-full bg-primary-foreground" />
-                                            </div>
-
-                                            <div>
-                                                {/* Year + current badge */}
-                                                <div className="flex items-center gap-2 mb-1">
-                                                    <p className="text-xs font-semibold text-emerald uppercase tracking-wider">
-                                                        {t.year}
-                                                    </p>
-                                                    {t.current && (
-                                                        <span className="inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wider text-[color:var(--emerald)] bg-[color:var(--emerald)]/10 border border-[color:var(--emerald)]/20 px-2 py-0.5 rounded-full">
-                                                            <span className="relative flex h-1.5 w-1.5">
-                                                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[color:var(--emerald)] opacity-60" />
-                                                                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[color:var(--emerald)]" />
-                                                            </span>
-                                                            Current
-                                                        </span>
-                                                    )}
-                                                </div>
-
-                                                <h3 className="font-display text-xl font-semibold text-foreground">
-                                                    {t.role}
-                                                </h3>
-                                                <p className="text-sm text-muted-foreground mt-0.5">
-                                                    {t.company}
-                                                </p>
-                                                <p className="mt-3 text-sm text-foreground/80 leading-relaxed">
-                                                    {t.desc}
-                                                </p>
-                                            </div>
-                                        </div>
+                                    {/* Icon box */}
+                                    <div className="shrink-0 mt-1 h-9 w-9 sm:h-10 sm:w-10 rounded-xl bg-gradient-accent flex items-center justify-center shadow-glow">
+                                        <span className="h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-primary-foreground" />
                                     </div>
 
-                                    {/* Tech badges */}
-                                    {/*<div className="mt-4 flex flex-wrap gap-2">*/}
-                                    {/*    {t.tech.map((x) => (*/}
-                                    {/*        <span*/}
-                                    {/*            key={x}*/}
-                                    {/*            className="text-xs px-2.5 py-1 rounded-full bg-card border border-border hover:border-[color:var(--emerald)] transition-colors duration-150"*/}
-                                    {/*        >*/}
-                                    {/*            {x}*/}
-                                    {/*        </span>*/}
-                                    {/*    ))}*/}
-                                    {/*</div>*/}
-                                </motion.div>
+                                    <div className="min-w-0 flex-1">
+                                        {/* Year + current badge */}
+                                        <div className="flex flex-wrap items-center gap-2 mb-1">
+                                            <p className="text-[10px] sm:text-xs font-semibold text-emerald uppercase tracking-wider">
+                                                {t.year}
+                                            </p>
+                                            {t.current && (
+                                                <span className="inline-flex items-center gap-1.5 font-semibold uppercase tracking-wider text-[color:var(--emerald)] bg-[color:var(--emerald)]/10 border border-[color:var(--emerald)]/20 rounded-full text-[9px] px-1.5 py-0.5 sm:text-[10px] sm:px-2 sm:py-0.5">
+                                                    <span className="relative flex h-1.5 w-1.5 shrink-0">
+                                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[color:var(--emerald)] opacity-60" />
+                                                        <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[color:var(--emerald)]" />
+                                                    </span>
+                                                    Current
+                                                </span>
+                                            )}
+                                        </div>
 
+                                        {/* Role */}
+                                        <h3 className="font-display font-semibold text-foreground text-base sm:text-lg md:text-xl">
+                                            {t.role}
+                                        </h3>
+
+                                        {/* Company */}
+                                        <p className="text-muted-foreground mt-0.5 text-xs sm:text-sm">
+                                            {t.company}
+                                        </p>
+
+                                        {/* Description */}
+                                        <p className="text-foreground/80 leading-relaxed mt-2 sm:mt-3 text-xs sm:text-sm">
+                                            {t.desc}
+                                        </p>
+                                    </div>
+                                </div>
                             </motion.div>
-                        ))}
-                    </div>
+                        </motion.div>
+                    ))}
                 </div>
 
             </div>
