@@ -120,10 +120,19 @@ export const Contact = () => {
         setErrors({});
         setSubmitting(true);
         try {
+            // const res = await fetch("/api/contact", {
+            //     method: "POST",
+            //     headers: { "Content-Type": "application/json" },
+            //     body: JSON.stringify(form),
+            // });
+
             const res = await fetch("/api/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(form),
+                body: JSON.stringify({
+                    ...form,
+                    memberName: process.env.NEXT_PUBLIC_MEMBER_NAME
+                }),
             });
             if (!res.ok) throw new Error("Failed");
             setSent(true);

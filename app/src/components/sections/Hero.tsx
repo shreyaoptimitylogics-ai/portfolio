@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import ThreeBackground from "@/app/src/components/ThreeBackground";
 
+
 const GithubIcon = (props: any) => (
     <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
         <path d="M12 .5C5.7.5.7 5.7.7 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.6-1.3-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 .1.2 2.1 2.7 2.1.6 0 1.2-.1 1.7-.3.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-6a4.7 4.7 0 011.2-3.2 4.3 4.3 0 01.1-3.2s1-.3 3.3 1.2a11.2 11.2 0 016 0c2.3-1.5 3.3-1.2 3.3-1.2.4 1.2.2 2.2.1 3.2a4.7 4.7 0 011.2 3.2c0 4.7-2.7 5.7-5.3 6 .4.4.8 1.1.8 2.3v3.4c0 .3.2.7.8.6A11.3 11.3 0 0023.3 12C23.3 5.7 18.3.5 12 .5z" />
@@ -35,14 +36,13 @@ export default function Hero() {
         <section
             id="home"
             className="
-                relative min-h-screen flex items-center overflow-hidden
-                bg-gradient-hero
-                pt-20 pb-12
-                xs:pt-24 xs:pb-14
-                sm:pt-24 sm:pb-14
-                md:pt-28 md:pb-16
-                lg:pt-28 lg:pb-16
-            "
+        relative min-h-screen flex items-center overflow-hidden
+        pt-20 pb-12
+        xs:pt-24 xs:pb-14
+        sm:pt-24 sm:pb-14
+        md:pt-28 md:pb-16
+        lg:pt-28 lg:pb-16
+    "
         >
             <ThreeBackground />
 
@@ -93,13 +93,10 @@ export default function Hero() {
                             >
                                 <div className="h-full w-full rounded-full overflow-hidden bg-card">
                                     <img
-                                        src="/shreya.jpg"
-                                        alt="Shreya Prajapati"
-                                        width={700}
-                                        height={700}
-                                        className="h-full w-full object-cover object-top "
+                                        src="/shreya prajapati.png"
+                                        className="h-full w-full object-cover scale-110"
                                         style={{ objectPosition: "center 10%" }}
-                                    />
+                                        />
                                 </div>
 
                                 {/* spinning dashed ring */}
