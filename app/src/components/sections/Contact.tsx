@@ -45,6 +45,9 @@ const schema = z.object({
     name: z.string().trim().min(1, "Name is required").max(100),
     email: z.string().trim().email("Invalid email").max(255),
     message: z.string().trim().min(1, "Message is required").max(1000),
+    phone: z.string().trim().min(10, "Phone is required").max(15),
+    subject: z.string().trim().min(1, "Subject is required").max(150),
+
 });
 
 const EMAIL    = "mailto:shreya.optimitylogics@gmail.com";
@@ -98,7 +101,8 @@ const FloatingField = ({
 
 /* ── CONTACT ── */
 export const Contact = () => {
-    const [form, setForm]         = useState({ name: "", email: "", message: "" });
+    const [form, setForm]         = useState({ name: "", email: "", message: "" ,  phone: "",
+        subject: ""});
     const [errors, setErrors]     = useState<Record<string, string>>({});
     const [submitting, setSubmitting] = useState(false);
     const [sent, setSent]         = useState(false);
@@ -131,13 +135,14 @@ export const Contact = () => {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     ...form,
-                    memberName: process.env.NEXT_PUBLIC_MEMBER_NAME
+                    From: process.env.NEXT_PUBLIC_FROM
                 }),
             });
             if (!res.ok) throw new Error("Failed");
             setSent(true);
             toast.success("Message sent!", { description: "Thanks — I'll get back to you soon." });
-            setForm({ name: "", email: "", message: "" });
+            setForm({ name: "", email: "", message: "" , phone: "",
+                subject: "" });
             setTimeout(() => setSent(false), 3500);
         } catch {
             toast.error("Something went wrong. Please try again.");
@@ -273,64 +278,96 @@ export const Contact = () => {
                         </div>
 
                         {/* Fields */}
+                        {/* Fields */}
                         <form onSubmit={onSubmit} className="space-y-3 sm:space-y-4">
+
+                            {/* Row 1 → Name + Email */}
                             <div className="grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-2">
                                 <FloatingField
-                                    id="name" label="Your name"
+                                    id="name"
+                                    label="Your name"
                                     value={form.name}
                                     onChange={onChange("name") as (e: React.ChangeEvent<HTMLInputElement>) => void}
-                                    error={errors.name} maxLength={100}
+                                    error={errors.name}
+                                    maxLength={100}
                                 />
                                 <FloatingField
-                                    id="email" label="Email address" type="email"
+                                    id="email"
+                                    label="Email address"
+                                    type="email"
                                     value={form.email}
                                     onChange={onChange("email") as (e: React.ChangeEvent<HTMLInputElement>) => void}
-                                    error={errors.email} maxLength={255}
+                                    error={errors.email}
+                                    maxLength={255}
+                                />
+                            </div>
+
+                            {/* Row 2 → Phone + Subject (NEW) */}
+                            <div className="grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-2">
+                                <FloatingField
+                                    id="phone"
+                                    label="Phone number"
+                                    type="tel"
+                                    value={form.phone}
+                                    onChange={onChange("phone") as (e: React.ChangeEvent<HTMLInputElement>) => void}
+                                    error={errors.phone}
+                                    maxLength={15}
+                                />
+                                <FloatingField
+                                    id="subject"
+                                    label="Subject"
+                                    value={form.subject}
+                                    onChange={onChange("subject") as (e: React.ChangeEvent<HTMLInputElement>) => void}
+                                    error={errors.subject}
+                                    maxLength={150}
                                 />
                             </div>
 
                             {/* Textarea */}
                             <div className="relative">
                                 <Textarea
-                                    id="message" value={form.message}
+                                    id="message"
+                                    value={form.message}
                                     onChange={onChange("message")}
-                                    rows={5} maxLength={1000} placeholder=" "
+                                    rows={5}
+                                    maxLength={1000}
+                                    placeholder=" "
                                     className="
-                                        peer pt-6
-                                        bg-muted/40 dark:bg-secondary/40
-                                        border-border resize-none text-sm
-                                        focus-visible:ring-[color:var(--emerald)]/40
-                                        focus-visible:border-[color:var(--emerald)]
-                                        transition-colors
-                                    "
+                peer pt-6
+                bg-muted/40 dark:bg-secondary/40
+                border-border resize-none text-sm
+                focus-visible:ring-[color:var(--emerald)]/40
+                focus-visible:border-[color:var(--emerald)]
+                transition-colors
+            "
                                 />
                                 <label
                                     htmlFor="message"
                                     className="
-                                        pointer-events-none absolute left-3 top-2
-                                        text-[10px] font-semibold uppercase tracking-widest text-muted-foreground
-                                        transition-all
-                                        peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm
-                                        peer-placeholder-shown:font-normal peer-placeholder-shown:tracking-normal
-                                        peer-placeholder-shown:text-muted-foreground/60
-                                        peer-focus:top-2 peer-focus:text-[10px]
-                                        peer-focus:font-semibold peer-focus:tracking-widest
-                                        peer-focus:text-[color:var(--emerald)]
-                                    "
+                pointer-events-none absolute left-3 top-2
+                text-[10px] font-semibold uppercase tracking-widest text-muted-foreground
+                transition-all
+                peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm
+                peer-placeholder-shown:font-normal peer-placeholder-shown:tracking-normal
+                peer-placeholder-shown:text-muted-foreground/60
+                peer-focus:top-2 peer-focus:text-[10px]
+                peer-focus:font-semibold peer-focus:tracking-widest
+                peer-focus:text-[color:var(--emerald)]
+            "
                                 >
                                     Tell me about your project
                                 </label>
+
                                 <div className="mt-1 flex items-center justify-between">
                                     {errors.message
                                         ? <p className="text-xs text-destructive">{errors.message}</p>
                                         : <span />
                                     }
                                     <span className="text-[11px] text-muted-foreground tabular-nums">
-                                        {form.message.length}/1000
-                                    </span>
+                {form.message.length}/1000
+            </span>
                                 </div>
                             </div>
-
                             {/* Submit row */}
                             <div className="flex items-center justify-between pt-1">
                                 {/* Availability — mobile only */}

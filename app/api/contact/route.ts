@@ -1,101 +1,22 @@
-// import { NextResponse } from "next/server";
-//
-// export async function POST(req: Request) {
-//     const { name, email, subject, message } = await req.json();
-//
-//     try {
-//         /* ===============================
-//            SLACK ALERT ONLY
-//         =============================== */
-//         await fetch(process.env.SLACK_WEBHOOK_URL!, {
-//             method: "POST",
-//             headers: { "Content-Type": "application/json" },
-//             body: JSON.stringify({
-//                 blocks: [
-//                     {
-//                         type: "header",
-//                         text: { type: "plain_text", text: "📬 New Portfolio Inquiry!" },
-//                     },
-//                     {
-//                         type: "section",
-//                         fields: [
-//                             { type: "mrkdwn", text: `*Name:*\n${name}` },
-//                             { type: "mrkdwn", text: `*Email:*\n${email}` },
-//                         ],
-//                     },
-//                     {
-//                         type: "section",
-//                         text: { type: "mrkdwn", text: `*Subject:*\n${subject || "Portfolio Contact"}` },
-//                     },
-//                     {
-//                         type: "section",
-//                         text: { type: "mrkdwn", text: `*Message:*\n${message}` },
-//                     },
-//                 ],
-//             }),
-//         });
-//
-//         return NextResponse.json({ success: true });
-//     } catch (err) {
-//         console.error(err);
-//         return NextResponse.json({ success: false }, { status: 500 });
-//     }
-// }
-
 
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
     const body = await req.json();
-    const { name, email, message, memberName } = body;
-
-    /* 🔥 FALLBACK (important) */
-    const referer = req.headers.get("referer") || "";
-
-    let finalMember = memberName || "Unknown";
-
-    if (!memberName) {
-        const members: Record<string, string> = {
-            shreya: "Shreya Prajapati",
-            rahul: "Rahul",
-            amit: "Amit",
-        };
-
-        Object.keys(members).forEach((key) => {
-            if (referer.includes(key)) {
-                finalMember = members[key];
-            }
-        });
-    }
+    const { name, email, message, From, phone, subject } = body;
 
     try {
         await fetch(process.env.SLACK_WEBHOOK_URL!, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                blocks: [
-                    {
-                        type: "header",
-                        text: { type: "plain_text", text: "📬 New Portfolio Inquiry!" },
-                    },
-                    {
-                        type: "section",
-                        fields: [
-                            { type: "mrkdwn", text: `*👤 Name:*\n${name}` },
-                            { type: "mrkdwn", text: `*📧 Email:*\n${email}` },
-                        ],
-                    },
-                    {
-                        type: "section",
-                        fields: [
-                            { type: "mrkdwn", text: `*🌐 MemberName:*\n${finalMember}` },
-                        ],
-                    },
-                    {
-                        type: "section",
-                        text: { type: "mrkdwn", text: `*💬 Message:*\n${message}` },
-                    },
-                ],
+                text: `*New Portfolio Contact!*
+*From:* ${From}
+*Name:* ${name}
+*Email:* ${email}
+*Phone:* ${phone}
+*Subject:* ${subject}
+*Message:* ${message}`,
             }),
         });
 
