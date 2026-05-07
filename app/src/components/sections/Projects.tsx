@@ -18,7 +18,7 @@ const ExternalLinkIcon = (props: any) => (
 
 const projects = [
     {
-        title: "Eyevestor — Investment Platform Website",
+        title: "Investment Platform Website",
         desc: "Eyevestor needed a modern scalable platform. I built a Craft CMS website with modular blocks, flexible templates, and easy content management.",
         tech: ["Next.js", "React JS", "Craft CMS", "Javascript"],
         image: "/eye.png",
@@ -26,7 +26,7 @@ const projects = [
         demo: "https://eyevestor-website.vercel.app/",
     },
     {
-        title: "HTS – Digital Hospitality Platform | Booking & Guest Management",
+        title: "Digital Hospitality Platform | Booking & Guest Management",
         desc: "Hotels struggled with outdated systems, so I built a modern responsive frontend for HTS using React.js, Next.js, JavaScript, and Tailwind CSS. I created clean UI screens for bookings, check-in/out, housekeeping, and guest management with a smooth user experience.",
         tech: ["React", "Next JS", "Javascript", "Tailwind CSS"],
         image: "/handwriting.webp",
@@ -34,7 +34,7 @@ const projects = [
         demo: "https://hts.hopper.com/",
     },
     {
-        title: "KetoCycle – AI-Powered Ketogenic Diet & Nutrition Tracker",
+        title: "AI-Powered Ketogenic Diet & Nutrition Tracker",
         desc: "Built a comprehensive mobile-first frontend for KetoCycle using React.js, Next.js, and Tailwind CSS. Designed intuitive UI screens for personalized meal planning, macro tracking, recipe recommendations, and progress analytics — delivering a clean, health-focused user experience.",
         tech: ["React", "Next JS", "Javascript", "Tailwind CSS"],
         image: "/ketoo.jpg",
@@ -42,7 +42,7 @@ const projects = [
         demo: "https://gl.ketocycle.diet/",
     },
     {
-        title: "TICE Group – Reverse Logistics & Product Recovery Platform",
+        title: "Reverse Logistics & Product Recovery Platform",
         desc: "Built a scalable responsive frontend for TICE Group using React.js, Next.js, and Tailwind CSS. Designed clean UI screens for returns orchestration, trade-in processing, real-time tracking dashboards, and recovery workflows — delivering a professional enterprise-grade user experience.",
         tech: ["React", "Next JS", "Javascript", "Tailwind CSS"],
         image: "/tice-group.jpeg",
