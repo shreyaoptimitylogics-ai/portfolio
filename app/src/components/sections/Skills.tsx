@@ -33,7 +33,7 @@ const groups = [
         ],
     },
     {
-        title: "State & Data",
+        title: "State & data",
         items: [
             { name: "Redux",       Icon: SiRedux,   color: "#764ABC" },
             { name: "Zustand",     Icon: MdStorage, color: "#EF6C00" },

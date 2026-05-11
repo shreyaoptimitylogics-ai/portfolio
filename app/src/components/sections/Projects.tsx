@@ -42,7 +42,7 @@ const projects = [
         demo: "https://gl.ketocycle.diet/",
     },
     {
-        title: "Reverse Logistics & Product Recovery Platform",
+        title: "npm run devReverse Logistics & Product Recovery Platform",
         desc: "Built a scalable responsive frontend for TICE Group using React.js, Next.js, and Tailwind CSS. Designed clean UI screens for returns orchestration, trade-in processing, real-time tracking dashboards, and recovery workflows — delivering a professional enterprise-grade user experience.",
         tech: ["React", "Next JS", "Javascript", "Tailwind CSS"],
         image: "/tice-group.jpeg",

@@ -10,6 +10,9 @@ import Project from "@/app/src/components/sections/Projects";
 import Experience from "@/app/src/components/sections/Experience";
 import {Contact} from "@/app/src/components/sections/Contact";
 import {IntroVideo} from "@/app/src/components/sections/intro";
+// import AITools from "@/app/src/components/sections/Aitools";
+import AITools from "@/app/src/components/sections/Aitools";
+
 export default function Page() {
     return (
         <ThemeProvider>
@@ -18,6 +21,7 @@ export default function Page() {
                 <Hero />
                 <About />
                 <Skills />
+                <AITools />
                 <IntroVideo/>
                 <Project />
                 <Experience />
