@@ -151,7 +151,7 @@ export default function RootLayout({
         </ThemeProvider>
 
 
-        <GoogleTagManager gtmId="G-SY7N56YEBD" />
+        <GoogleTagManager gtmId="GTM-NSPQR852" />
         </body>
         </html>
     );
