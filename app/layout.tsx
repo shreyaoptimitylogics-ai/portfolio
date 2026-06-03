@@ -63,6 +63,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/app/src/hooks/use-theme";
 import SmoothScroll from "./SmoothScroll";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -148,6 +149,9 @@ export default function RootLayout({
         <ThemeProvider>
             <SmoothScroll>{children}</SmoothScroll>
         </ThemeProvider>
+
+
+        <GoogleTagManager gtmId="G-SY7N56YEBD" />
         </body>
         </html>
     );
